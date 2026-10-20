@@ -6,7 +6,7 @@ Trasferimento di esami DICOM da PACS a PACS tramite C-MOVE delegato.
 
 P2PMove trasferisce al PACS destinazione gli studi del PACS sorgente senza che le immagini passino dal pc: l'app non le riceve e non le salva.
 
-![versione](https://img.shields.io/badge/versione-1.1.2-2f6feb)
+![versione](https://img.shields.io/badge/versione-1.1.3-2f6feb)
 ![linguaggio](https://img.shields.io/badge/C%2B%2B-20-00599C?logo=cplusplus&logoColor=white)
 ![piattaforma](https://img.shields.io/badge/macOS-13%2B%20%C2%B7%20Apple%20Silicon-000000?logo=apple&logoColor=white)
 ![DICOM](https://img.shields.io/badge/DICOM-DCMTK%203.6.9-8957e5)
@@ -43,8 +43,14 @@ arrivate.
 | Stesso motore da terminale, per automazioni | `p2pmove-cli` |
 
 > [!NOTE]
-> Stato del progetto (1.1.2): compila e passa i test automatici. Il motore è stato collaudato su 
-> PACS reali (dcm4chee v2.18, dcm4chee-arc, orthanc, horos).
+> Stato del progetto (1.1.3): compila e passa i test automatici. Il motore è collaudato in test.
+
+> [!CAUTION]
+> **Avvertenza d'uso.** P2PMove non è un dispositivo medico: il programma non è marcato CE, non è
+> validato per uso diagnostico né clinico e non va usato per decisioni sul paziente. Va usato solo con
+> copie di verifica, cioè su archivi di cui esistono altre copie, e sempre con controlli propri: chi lo
+> usa deve confrontare gli studi su A e su B e resta responsabile dell'uso e dei dati. Il programma è
+> fornito «così com'è», senza garanzie di alcun tipo, come previsto dalla licenza MIT.
 
 ### Schermate
 
@@ -68,7 +74,7 @@ arrivate.
 | Piattaforma di destinazione | macOS 13 Ventura o successivo, Apple Silicon (arm64) |
 | Sviluppo e collaudo | macOS 26 su Mac M3. Il motore è stato collaudato anche su Linux con `dcmqrscp` |
 | Bundle | `P2PMove.app`, identificativo `local.p2pmove.app`, categoria *medical*, Retina, icona propria |
-| Versione corrente | 1.1.2 (definita in `project(P2PMove VERSION …)` di `CMakeLists.txt`) |
+| Versione corrente | 1.1.3 (definita in `project(P2PMove VERSION …)` di `CMakeLists.txt`) |
 | Dimensione del codice | circa 4.100 righe tra `src/` e `tests/` |
 
 ### Librerie
@@ -470,6 +476,7 @@ Non sono versionati (`.gitignore`): `build/`, `third_party/`, `dist/`, `*.db`, `
 
 | Versione | Contenuto |
 |---|---|
+| 1.1.3 | avvertenza d'uso (non marcato CE, non validato per uso diagnostico, solo con copie di verifica e controlli propri); stato del collaudo riformulato; valori iniziali dei nodi generici |
 | 1.1.2 | licenza MIT, copyright MIT nell'`Info.plist`, documentazione completa (`README.md`); nessuna modifica al codice dell'app |
 | 1.1.1 | verifica dell'hash del commit DCMTK; CSV senza il nome del paziente |
 | 1.1.0 | correzioni dalla revisione del codice, rotazione del registro, opzione per non registrare i nomi, "Chiudi comunque", test automatici |
@@ -477,7 +484,8 @@ Non sono versionati (`.gitignore`): `build/`, `third_party/`, `dist/`, `*.db`, `
 
 ## Licenza
 
-Il codice di P2PMove è distribuito con licenza MIT (vedi [`LICENSE`](LICENSE)).
+Il codice di P2PMove è distribuito con licenza MIT (vedi [`LICENSE`](LICENSE)), senza garanzie e con
+le limitazioni d'uso indicate nell'avvertenza all'inizio di questo file.
 
 Le librerie usate hanno licenze proprie, compatibili con la MIT: DCMTK (licenza OFFIS di tipo BSD),
 Dear ImGui (MIT), GLFW (zlib) e SQLite (pubblico dominio). Chi distribuisce il DMG, che le contiene
