@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>CFBundleDevelopmentRegion</key>     <string>it</string>
+  <key>CFBundleExecutable</key>            <string>${MACOSX_BUNDLE_EXECUTABLE_NAME}</string>
+  <key>CFBundleIdentifier</key>            <string>${MACOSX_BUNDLE_GUI_IDENTIFIER}</string>
+  <key>CFBundleInfoDictionaryVersion</key> <string>6.0</string>
+  <key>CFBundleName</key>                  <string>${MACOSX_BUNDLE_BUNDLE_NAME}</string>
+  <key>CFBundlePackageType</key>           <string>APPL</string>
+  <key>CFBundleShortVersionString</key>    <string>${MACOSX_BUNDLE_SHORT_VERSION_STRING}</string>
+  <key>CFBundleVersion</key>               <string>${MACOSX_BUNDLE_BUNDLE_VERSION}</string>
+  <key>CFBundleIconFile</key>              <string>${MACOSX_BUNDLE_ICON_FILE}</string>
+  <key>LSMinimumSystemVersion</key>        <string>13.0</string>
+  <key>LSApplicationCategoryType</key>     <string>public.app-category.medical</string>
+  <key>NSHumanReadableCopyright</key>      <string>Copyright © 2026 Giuseppe Pugliese — Licenza MIT</string>
+  <!-- Schermi Retina a piena risoluzione -->
+  <key>NSHighResolutionCapable</key>       <true/>
+  <!-- macOS 15+: senza questa chiave le connessioni verso IP della LAN (PACS)
+       falliscono con "No route to host" finché l'utente non concede il permesso
+       in Impostazioni > Privacy e sicurezza > Rete locale -->
+  <key>NSLocalNetworkUsageDescription</key>
+  <string>P2PMove si collega ai PACS della rete locale (C-ECHO, C-FIND, C-MOVE).</string>
+</dict>
+</plist>

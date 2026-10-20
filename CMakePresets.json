@@ -1,0 +1,70 @@
+{
+  "version": 6,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 24,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "debug",
+      "displayName": "Debug (Ninja)",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/debug",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug"
+      }
+    },
+    {
+      "name": "release",
+      "displayName": "Release (Ninja)",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/release",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release"
+      }
+    },
+    {
+      "name": "standalone",
+      "displayName": "Release indipendente (DCMTK/GLFW statici)",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/standalone",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "P2P_STANDALONE": "ON"
+      }
+    },
+    {
+      "name": "xcode",
+      "displayName": "Progetto Xcode (facoltativo)",
+      "generator": "Xcode",
+      "binaryDir": "${sourceDir}/build/xcode"
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "debug",
+      "configurePreset": "debug"
+    },
+    {
+      "name": "release",
+      "configurePreset": "release"
+    },
+    {
+      "name": "standalone",
+      "configurePreset": "standalone"
+    }
+  ],
+  "testPresets": [
+    {
+      "name": "debug",
+      "configurePreset": "debug",
+      "output": { "outputOnFailure": true }
+    },
+    {
+      "name": "standalone",
+      "configurePreset": "standalone",
+      "output": { "outputOnFailure": true }
+    }
+  ]
+}

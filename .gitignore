@@ -1,0 +1,15 @@
+build/
+.cache/
+compile_commands.json
+*.db
+*.db-wal
+*.db-shm
+.DS_Store
+third_party/
+dist/
+
+# Documenti interni, non pubblicati su GitHub
+GUIDA_SVILUPPO.md
+PROGRESS.md
+README_OLD.md
+CHANGELOG.md

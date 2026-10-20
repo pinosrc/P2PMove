@@ -1,0 +1,22 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "P2PMove (GUI, debug)",
+      "type": "lldb",
+      "request": "launch",
+      "program": "${workspaceFolder}/build/debug/P2PMove.app/Contents/MacOS/P2PMove",
+      "cwd": "${workspaceFolder}",
+      "preLaunchTask": "CMake: build"
+    },
+    {
+      "name": "p2pmove-cli echo",
+      "type": "lldb",
+      "request": "launch",
+      "program": "${workspaceFolder}/build/debug/p2pmove-cli",
+      "args": ["echo"],
+      "cwd": "${workspaceFolder}",
+      "preLaunchTask": "CMake: build"
+    }
+  ]
+}
