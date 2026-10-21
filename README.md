@@ -9,6 +9,7 @@ P2PMove trasferisce al PACS destinazione gli studi del PACS sorgente senza che l
 ![versione](https://img.shields.io/badge/versione-1.1.3-2f6feb)
 ![linguaggio](https://img.shields.io/badge/C%2B%2B-20-00599C?logo=cplusplus&logoColor=white)
 ![piattaforma](https://img.shields.io/badge/macOS-13%2B%20%C2%B7%20Apple%20Silicon-000000?logo=apple&logoColor=white)
+![piattaforma](https://img.shields.io/badge/Windows-11%20x64-0078D4?logo=windows&logoColor=white)
 ![DICOM](https://img.shields.io/badge/DICOM-DCMTK%203.6.9-8957e5)
 ![GUI](https://img.shields.io/badge/GUI-Dear%20ImGui%201.91.5-3fb950)
 ![db](https://img.shields.io/badge/database-SQLite-003B57?logo=sqlite&logoColor=white)
@@ -71,11 +72,19 @@ arrivate.
 | Linguaggio | C++20 (`CMAKE_CXX_STANDARD 20`, estensioni del compilatore disattivate) |
 | Compilatore | Apple Clang (Xcode Command Line Tools), provato con la versione 21.0.0 (`arm64-apple-darwin25`). Il `CMakeLists.txt` abilita `-Wall -Wextra` per Clang e GCC |
 | Sistema di build | CMake 3.24 o successivo (provato con 4.4.4) e Ninja (provato con 1.13.2) |
-| Piattaforma di destinazione | macOS 13 Ventura o successivo, Apple Silicon (arm64) |
+| Piattaforma di destinazione | macOS 13 Ventura o successivo, Apple Silicon (arm64); Windows 11 x64 (solo eseguibili, vedi sotto) |
 | Sviluppo e collaudo | macOS 26 su Mac M3. Il motore è stato collaudato anche su Linux con `dcmqrscp` |
 | Bundle | `P2PMove.app`, identificativo `local.p2pmove.app`, categoria *medical*, Retina, icona propria |
 | Versione corrente | 1.1.3 (definita in `project(P2PMove VERSION …)` di `CMakeLists.txt`) |
 | Dimensione del codice | circa 4.100 righe tra `src/` e `tests/` |
+
+### Windows
+
+Per Windows 11 x64 la [Release](https://github.com/pinosrc/P2PMove/releases/latest) include due allegati,
+senza sorgenti nel repository: un installer (`P2PMove-<versione>-setup-x64.exe`) e uno zip portabile
+(`P2PMove-<versione>-win-x64.zip`) con `P2PMove.exe` e `p2pmove-cli.exe`. Sono indipendenti: non servono
+Visual C++ Redistributable né altre librerie. Gli eseguibili non sono firmati, quindi SmartScreen può
+mostrare un avviso al primo avvio. Valgono le stesse avvertenze d'uso del resto del programma.
 
 ### Librerie
 
